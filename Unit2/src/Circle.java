@@ -1,8 +1,8 @@
 //© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Noah Kay
+//Date - 2/6/18
+//Class - AP CSA
+//Lab  - Lab02e
 
 public class Circle
 {
@@ -10,14 +10,14 @@ public class Circle
 	private double area;
 
 	public void setRadius(double rad)
-	{
+	{radius = rad;
 	}
 
 	public void calculateArea( )
-	{
+	{area = Math.PI * Math.pow(radius, 2);
 	}
 
 	public void print( )
-	{
+	{System.out.print("The area is :: " + area);
 	}
 }

@@ -1,16 +1,17 @@
 //© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Noah Kay
+//Date - 2/6/18
+//Class - AP CSA
+//Lab  - Lab023
 
 public class Lab02e
 {
 	public static void main( String[] args )
    {
-		//add test cases
-		
-		
+		Circle c1 = new Circle();
+		c1.setRadius(3);
+		c1.calculateArea();
+		c1.print();
 		
 	}
 }
