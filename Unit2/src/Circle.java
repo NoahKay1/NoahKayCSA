@@ -18,6 +18,6 @@ public class Circle
 	}
 
 	public void print( )
-	{System.out.print("The area is :: " + area);
+	{System.out.println("The area is :: " + area);
 	}
 }
