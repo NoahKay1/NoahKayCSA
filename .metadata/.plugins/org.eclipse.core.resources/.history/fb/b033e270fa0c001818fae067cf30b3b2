@@ -11,7 +11,7 @@ public class Fahrenheit
 
 	public void setFahrenheit(double fahren)
 	{
-		fahrenheit = fahren;
+		double fahrenheit = (fahren);
 	}
 
 	public double getCelsius()
@@ -23,6 +23,6 @@ public class Fahrenheit
 
 	public void print()
 	{
-		System.out.println(fahrenheit + " degress Fahrenheit == " + getCelsius() + " degrees Celsius");
+		System.out.println(fahrenheit + " degress Fahrenheit ==" + getCelsius() + " degrees Celsius");
 	}
 }

@@ -9,7 +9,7 @@ public class Lab02g
 	public static void main( String[] args )
 	{
 		Fahrenheit f1 = new Fahrenheit();
-		f1.setFahrenheit(98.60);
+		f1.setFahrenheit(98.6);
 		f1.getCelsius();
 		f1.print();
 	}

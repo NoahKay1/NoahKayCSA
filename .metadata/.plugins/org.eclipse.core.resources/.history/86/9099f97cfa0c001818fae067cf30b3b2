@@ -23,6 +23,6 @@ public class Fahrenheit
 
 	public void print()
 	{
-		System.out.println(fahrenheit + " degress Fahrenheit == " + getCelsius() + " degrees Celsius");
+		System.out.println(fahrenheit + " degress Fahrenheit ==" + getCelsius() + " degrees Celsius");
 	}
 }
