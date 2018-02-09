@@ -1,8 +1,8 @@
 //© A+ Computer Science  -  www.apluscompsci.com
-//Name - Noah Kay
-//Date - 2/9/18
-//Class - AP CSA
-//Lab  - Lab04e
+//Name -
+//Date -
+//Class -
+//Lab  -
 
 import static java.lang.System.*;
 
@@ -12,13 +12,13 @@ public class StringChecker
 
 	public StringChecker()
 	{
-		setString("");
+
 
 	}
 
 	public StringChecker(String s)
 	{
-		setString(s);
+
 
 	}
 
@@ -29,11 +29,7 @@ public class StringChecker
 
 	public boolean findLetter(char c)
 	{
-		if (word.indexOf(c) >= 0)
-		{	
-			return true;
-			
-				}
+
 
 
 		return false;
@@ -41,11 +37,7 @@ public class StringChecker
 
 	public boolean findSubString(String s)
 	{
-		if (word.indexOf(s) >= 0)
-		{	
-			return true;
-			
-				}
+
 
 
 		return false;
@@ -53,6 +45,6 @@ public class StringChecker
 
  	public String toString()
  	{
- 		return word + "\n\n";
+ 		return "\n\n";
 	}
 }
