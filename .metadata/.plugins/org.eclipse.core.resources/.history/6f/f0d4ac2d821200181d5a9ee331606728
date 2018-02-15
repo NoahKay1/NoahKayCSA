@@ -13,16 +13,8 @@ public class Lab08i
 	{
 		Prime test = new Prime(24);
 		out.println(test);
-		test.setPrime(7);
-		out.println(test);
-		test.setPrime(100);
-		out.println(test);
-		test.setPrime(113);
-		out.println(test);
-		test.setPrime(65535);
-		out.println(test);
-		test.setPrime(2);
-		out.println(test);
+		
+		
 		
 		
 		

@@ -37,26 +37,27 @@ public class Prime
 		{
 			test = number % i;
 			if (test == 0){
-				return false;
+				return true;
 			}
 		}
-		return true;
+		return false;
 				
 		}
-	
+
+		
+
+
+
+
+
+
+		
 	
 
 	public String toString()
 	{
 		String output="";
-		if (isPrime())
-		{
-		output = "" + number + " is prime.\n";
-		}
-		else
-		{
-		output = "" + number + " is not prime.\n";
-		}
+
 
 
 

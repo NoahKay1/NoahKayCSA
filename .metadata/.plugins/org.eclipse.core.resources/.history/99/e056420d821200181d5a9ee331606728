@@ -37,10 +37,10 @@ public class Prime
 		{
 			test = number % i;
 			if (test == 0){
-				return false;
+				return true;
 			}
 		}
-		return true;
+		return false;
 				
 		}
 	
