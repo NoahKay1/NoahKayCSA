@@ -12,8 +12,7 @@ public class Lab11c
    {
 	   TriangleThree l = new TriangleThree(3, "A");
 	   System.out.print(l);
-	   l.setTriangle(7, "X");
-	   System.out.print(l);
+	   
 
 
 

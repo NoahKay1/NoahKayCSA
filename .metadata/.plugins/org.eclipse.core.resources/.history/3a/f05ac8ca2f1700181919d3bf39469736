@@ -36,11 +36,11 @@ public class TriangleThree
 	{
 		String output="";
 		for (int i = 0; i < size; i++){
-			for(int j = 1; j<size-i; j++){
+			for(int j = 0; j<size-1; j++){
 				output+= " ";
 				
 			}
-			for (int k = 0; k < i+1; k++){
+			for (int k = 0; k < size; k++){
 				output += getLetter();
 			}
 			output += "\n";
