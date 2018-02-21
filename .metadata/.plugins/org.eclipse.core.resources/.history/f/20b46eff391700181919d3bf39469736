@@ -54,7 +54,7 @@ public class Grades
 			output+= "grade " + i + " :: " + grades[i] + "\n";
 			
 		}
-		output += "\naverage = " + getAverage() + "\n";
+		output += "\naverage = " + getAverage();
 		return output;
 	
 	}
