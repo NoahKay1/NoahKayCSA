@@ -19,14 +19,14 @@ public class RomanNumeral
 
 	public RomanNumeral(String str)
 	{
-		setRoman(str);
+		setRoman("");
 
 
 	}
 
 	public RomanNumeral(Integer orig)
 	{
-		setNumber(orig);
+		setNumber(0);
 
 
 	}
@@ -49,21 +49,14 @@ public class RomanNumeral
 
 	public Integer getNumber()
 	{
-		number = 0;
-		for (int i = 0; i<NUMBERS.length; i++){
-			while(roman.indexOf(LETTERS[i])==0){
-				number+=NUMBERS[i];
-				roman = roman.substring(LETTERS[i].length());
-			}
-				
-		}
 		return number;
 	}
 
 	public String toString()
 	{
 		roman = "";
-		
+		roman += LETTERS[i];
+		number -= NUMBERS[i];
 		for (int i = 0; i<NUMBERS.length; i++){
 			while(number>=NUMBERS[i]){
 				roman += LETTERS[i];
