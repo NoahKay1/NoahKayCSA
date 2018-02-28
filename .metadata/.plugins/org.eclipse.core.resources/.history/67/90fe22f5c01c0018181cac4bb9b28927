@@ -75,8 +75,13 @@ public class Deck {
 		if (size() == 0)
 			return null;
 		else {
-			size--;
-			return cards[size];
+			Card c = cards[0];
+			Card[] newCards = cards;
+			for (int i = 1; i < size; i++){
+				newCards[i-1] = cards [i];
+			}
+			cards = newCards;
+			return c;
 			
 		}
 	}
