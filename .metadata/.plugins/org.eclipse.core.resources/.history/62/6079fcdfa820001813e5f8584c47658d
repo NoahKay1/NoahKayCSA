@@ -19,10 +19,7 @@ public class MadLib
 	
 	public MadLib()
 	{
-		verbs = new ArrayList<String>();
-		nouns = new ArrayList<String>();
-		adjectives = new ArrayList<String>();
-		
+
 
 
 	}
@@ -30,8 +27,6 @@ public class MadLib
 	public MadLib(String fileName)
 	{
 		//load stuff
-		this();
-		
 		
 		
 		
