@@ -21,33 +21,38 @@ public class MadLib
 	{
 		verbs = new ArrayList<String>();
 		nouns = new ArrayList<String>();
-		adjectives = new ArrayList<String>();
-		
+		adjectives = new  ArrayList<String>();
+
 
 
 	}
 
 	public MadLib(String fileName)
 	{
-		//load stuff
-		this();
+		this();		
 		loadNouns();
-		loadVerbs();
 		loadAdjectives();
-		
-		
+		loadVerbs();
 		
 		
 		try{
 			Scanner file = new Scanner(new File(fileName));
-		
-		
-		
-		
-		
-		
-		
-	
+			while(file.hasNext()){
+				String thing = file.next();
+				if (thing.equals("#")){
+					System.out.print(getRandomNoun() + " ");
+				}
+				else if(thing.equals("@")){
+					System.out.print(getRandomVerb() + " ");
+				}
+				else if(thing.equals("&")){
+					System.out.print(getRandomAdjective()+ " ");
+				}
+				else{
+					System.out.print(thing + " ");
+				}
+				
+			}
 		
 		}
 		catch(Exception e)
@@ -60,23 +65,31 @@ public class MadLib
 	public void loadNouns()
 	{
 		try{
-			Scanner file = new Scanner(new File("nouns.dat"));
-		
+		    Scanner scan = new Scanner(new File("C:\\Users\\kayn2930\\Desktop\\NoahKayCSA\\Unit10\\src\\nouns.dat"));
+		    while(scan.hasNext()){
+			    nouns.add(scan.next());
+			
+		}
 		
 		
 		
 		}
 		catch(Exception e)
 		{
-			out.println("Houston we have a problem!");
+			System.out.println(e);
 		}	
+		
 		
 	}
 	
 	public void loadVerbs()
 	{
 		try{
-			Scanner file = new Scanner(new File("verbs.dat"));
+		Scanner scan = new Scanner(new File("C:\\Users\\kayn2930\\Desktop\\NoahKayCSA\\Unit10\\src\\verbs.dat"));
+		while(scan.hasNext()){
+			verbs.add(scan.next());
+		}
+	
 	
 	
 	
@@ -84,13 +97,18 @@ public class MadLib
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 		}
 	}
 
 	public void loadAdjectives()
 	{
 		try{
-			Scanner file = new Scanner(new File("adjectives.dat"));
+		Scanner scan = new Scanner(new File("C:\\Users\\kayn2930\\Desktop\\NoahKayCSA\\Unit10\\src\\adjectives.dat"));
+		while(scan.hasNext()){
+			adjectives.add(scan.next());
+		}
+	
 	
 	
 	
@@ -98,25 +116,26 @@ public class MadLib
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 		}
 	}
 
 	public String getRandomVerb()
 	{
-	
-		return "";
+		int random = (int)(Math.random()*verbs.size());
+		return verbs.get(random);
 	}
 	
 	public String getRandomNoun()
 	{
-		
-		return "";
+		int random = (int)(Math.random()*nouns.size());
+		return nouns.get(random);
 	}
 	
 	public String getRandomAdjective()
 	{
-		
-		return "";
+		int random = (int)(Math.random()*adjectives.size());
+		return adjectives.get(random);
 	}		
 
 	public String toString()
