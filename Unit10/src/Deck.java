@@ -61,6 +61,7 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
+	
 	public void shuffle() {
 		for (int k = cards.size() - 1; k > 0; k--) {
 			int howMany = k + 1;
