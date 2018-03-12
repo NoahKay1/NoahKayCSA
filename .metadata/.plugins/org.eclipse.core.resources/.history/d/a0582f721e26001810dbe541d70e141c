@@ -27,14 +27,12 @@ public class Grades
 	{
 		Scanner scan = new Scanner(gradeList);
 		int num = scan.nextInt();
-		grades = new double[num];
 		String sub = "" + num; 
 		String newGrade = gradeList.substring(sub.length()+3);
 		scan = new Scanner(newGrade);
 		int count = 0;
 		while (scan.hasNextDouble()){
 			grades[count] = scan.nextDouble();
-			count++;
 		}
 		
 
