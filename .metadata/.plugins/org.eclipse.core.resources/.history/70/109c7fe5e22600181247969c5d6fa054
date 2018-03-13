@@ -23,8 +23,9 @@ public class Student
 	public Student(String name, String gradeList)
 	{
 		myGrades = new Grades(gradeList);
-		setName(name);
+		
 		setGrades(gradeList);
+		setName(name);
 		
 
 
