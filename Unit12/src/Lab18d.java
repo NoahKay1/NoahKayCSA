@@ -26,11 +26,11 @@ public class Lab18d
 		}
 		for(int i = 0; i < size; i++){
 			for(int j = 0; j < i; j ++){
-				if(words.get(i).compareTo(words.get(j)) == -1)
+				if(words.get(j).compareTo(words.get(i)) == -1)
 				{
-					Word temp = words.get(i);
-					words.set(i, words.get(j));
-					words.set(j, temp);
+					Word temp = words.get(j);
+					words.set(j, words.get(i));
+					words.set(i, temp);
 				}
 			}
 		}
