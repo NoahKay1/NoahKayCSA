@@ -15,13 +15,13 @@ public class Maze
 
 	public Maze()
 	{
-
+		maze = new int [][]();
 
 	}
 
 	public Maze(int size, String line)
 	{
-
+		
 
 	}
 

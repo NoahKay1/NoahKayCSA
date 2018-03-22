@@ -13,5 +13,16 @@ public class Lab21i
 {
 	public static void main( String args[] ) throws IOException
 	{
+		Scanner chop = new Scanner(new File("C:\\Users\\kayn2930\\Desktop\\NoahKayCSA\\Unit14\\src\\lab21i.dat"));
+		while (chop.hasNextLine()){
+			int num = chop.nextInt();	
+			chop.nextLine();
+			String s = chop.nextLine();
+			Maze m1 = new Maze(num,s);
+			System.out.println(m1);
+		}
+		
+		
+		
 	}
 }
