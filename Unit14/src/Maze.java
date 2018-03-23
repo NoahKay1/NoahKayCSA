@@ -15,20 +15,48 @@ public class Maze
 
 	public Maze()
 	{
-		maze = new int [][]();
-
+		maze = new int [][]{};
+		
+		
 	}
 
 	public Maze(int size, String line)
 	{
-		
+		maze = new int[size][size];
+		Scanner scan = new Scanner(line);
+		for (int i = 0; i < size; i++){
+			for (int j = 0; j < size; j++){
+				maze[i][j] = scan.nextInt();
+			}
+		}
 
 	}
 
-	public boolean hasExitPath(int r, int c)
+	public void hasExitPath(int r, int c)
 	{
-
-		return false;
+		if (r >= 0 && c>= 0 && r<maze.length && c<maze[r].length && maze[r][c] == 1){
+			maze[r][c] = 4;
+			if (maze[r-1][c] == 1){
+				hasExitPath(r-1,c);
+			}
+			else if (maze[r+1][c] == 1){
+				hasExitPath(r+1,c);
+			}
+			else if (maze[r][c-1] == 1){
+				hasExitPath(r,c-1);
+			}
+			else if (maze[r][c+1] == 1){
+				hasExitPath(r,c+1);
+			}
+			
+		}
+		
+		if (maze[r][c] == 1 && c==maze[r].length){
+			System.out.println("exit found");
+		}
+		else if (c!=maze[r].length){
+			System.out.println("exit not found");
+		}
 	}
 
 	public String toString()

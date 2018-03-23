@@ -92,8 +92,8 @@ public class ElevensBoard extends Board {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 
 			for (int i = 0; i < selectedCards.size(); i++){
-				for (int j = 0; j < i; j++)
-					for (int k = 0; k < j; k++){
+				for (int j = 0; j < selectedCards.size(); j++)
+					for (int k = 0; k < selectedCards.size(); k++){
 						if (cardAt(selectedCards.get(i)).pointValue() + cardAt(selectedCards.get(j)).pointValue() + cardAt(selectedCards.get(k)).pointValue() == 11){
 							return true;
 						}	
@@ -117,7 +117,7 @@ public class ElevensBoard extends Board {
 		boolean hasQueen = false;
 		boolean hasKing = false;
 		for (int i = 0; i<selectedCards.size(); i++){
-			for (int j = 0; j < i; j++){
+			for (int j = 1; j < selectedCards.size() - 1; j++){
 				if (cardAt(selectedCards.get(i)).rank() == "jack" && cardAt(selectedCards.get(j)).rank() == "jack"){
 					hasJack = true;
 				}
