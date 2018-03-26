@@ -13,17 +13,15 @@ public class Lab24d
 {
 	public static void main( String args[] ) throws IOException
 	{
-		Scanner file = new Scanner (new File("Lab24d.dat"));
-
-
-
-
-
-
-
-
+		Scanner file = new Scanner (new File("D:\\Program Files\\csa\\readUnits (this is just for my reference)\\Unit14\\Unit14_2016\\Unit14-Assignments\\lab24d.dat"));
+		int size = file.nextInt();
+		file.nextLine();
+		for(int i = 0; i < size; i++) {
+			TicTacToe test = new TicTacToe(file.next());
+			out.println(test);
+		}
+		file.close();
 	}
 }
-
 
 
