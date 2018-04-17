@@ -25,6 +25,22 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testKeepOnlyRed()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyRed();
+    beach.explore();
+  }
+  
+  public static void testKeepOnlyGreen()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyGreen();
+    beach.explore();
+  }
+  
   public static void testNegate()
   {
     Picture beach = new Picture("beach.jpg");
@@ -67,6 +83,29 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorArms()
+  {
+	  Picture arms = new Picture("snowman.jpg");
+	    arms.explore();
+	    arms.mirrorArms();
+	    arms.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture gull = new Picture("seagull.jpg");
+	    gull.explore();
+	    gull.mirrorGull();
+	    gull.explore();
+  }
+  
+  public static void testMirrorDiagonal()
+  {
+	  Picture diag = new Picture("beach.jpg");
+	    diag.explore();
+	    diag.mirrorDiagonal();
+	    diag.explore();
+  }
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -83,6 +122,13 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testCopy()
+  {
+    Picture copy = new Picture("beach.jpg");
+    copy.copy(copy,0,320);
+    copy.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -91,20 +137,21 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     ///testZeroBlue();
-    ///testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    ///testNegate();
+    testKeepOnlyBlue();
+    ///testKeepOnlyRed();
+    ///testKeepOnlyGreen();
+    testNegate();
     ///testGrayscale();
-   testFixUnderwater();
-    //testMirrorVertical();
+    ///testFixUnderwater();
+    ///testMirrorVertical();
     //testMirrorTemple();
-    //testMirrorArms();
-    //testMirrorGull();
-    //testMirrorDiagonal();
+    ///testMirrorArms();
+    testMirrorGull();
+    ///testMirrorDiagonal();
     ///testCollage();
-    //testCopy();
-    //testEdgeDetection();
+    ///testCopy();
+    ///testEdgeDetection();
+	  
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
