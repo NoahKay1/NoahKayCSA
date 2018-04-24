@@ -338,41 +338,13 @@ public class Picture extends SimplePicture
 	  Pixel origPixel = null;
 	  Pixel diagPixel = null;
 	  Pixel[][] pixels = this.getPixels2D();
-	  for (int row = x; row < h; row++) {
-			for (int col = y; col < w; col++) {
-	    	origPixel = pixels[row][col];
-	    	diagPixel = pixels[row-1][col-1];
-	    	int blue = (int)origPixel.getBlue()+(int)(.5*(origPixel.getBlue()-diagPixel.getBlue()));
-	    	int red = (int)origPixel.getRed()+(int)(.5*(origPixel.getRed()-diagPixel.getRed()));
-	    	int green = (int)origPixel.getGreen()+(int)(.5*(origPixel.getGreen()-diagPixel.getGreen()));
-	    	if (blue>255){
-	    		blue = 255; 
-	    	}
-	    	else if (blue < 0){
-	    		blue = 0;
-	    	}
-	    	else {
-	        origPixel.setBlue(blue);
-	    	}
-	    	if (red>255){
-	    		red = 255; 
-	    	}
-	    	else if (red < 0){
-	    		red = 0;
-	    	}
-	    	else {
-	        origPixel.setRed(red);
-	    	}
-	    	if (green>255){
-	    		green = 255; 
-	    	}
-	    	else if (green < 0){
-	    		green = 0;
-	    	}
-	    	else {
-	        origPixel.setGreen(green);
-	    	}
-	       
+	  for (int row = 0; row < pixels.length; row++) {
+			for (int col = 0; col < pixels[0].length; col++) {
+	    	origPixel = pixels[col][row];
+	    	diagPixel = pixels[col-1][row-1];  
+	        origPixel.setBlue((int)origPixel.getBlue()+(int)(.5*(origPixel.getBlue()-diagPixel.getBlue())));
+	        origPixel.setRed((int)origPixel.getRed()+(int)(.5*(origPixel.getRed()-diagPixel.getRed())));
+	        origPixel.setGreen((int)origPixel.getGreen()+(int)(.5*(origPixel.getGreen()-diagPixel.getGreen())));
 	      }
 	    }
 	  

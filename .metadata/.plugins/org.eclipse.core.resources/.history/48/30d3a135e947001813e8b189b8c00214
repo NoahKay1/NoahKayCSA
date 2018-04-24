@@ -338,10 +338,10 @@ public class Picture extends SimplePicture
 	  Pixel origPixel = null;
 	  Pixel diagPixel = null;
 	  Pixel[][] pixels = this.getPixels2D();
-	  for (int row = x; row < h; row++) {
-			for (int col = y; col < w; col++) {
-	    	origPixel = pixels[row][col];
-	    	diagPixel = pixels[row-1][col-1];
+	  for (int row = x; row < w; row++) {
+			for (int col = y; col < h; col++) {
+	    	origPixel = pixels[col][row];
+	    	diagPixel = pixels[col-1][row-1];
 	    	int blue = (int)origPixel.getBlue()+(int)(.5*(origPixel.getBlue()-diagPixel.getBlue()));
 	    	int red = (int)origPixel.getRed()+(int)(.5*(origPixel.getRed()-diagPixel.getRed()));
 	    	int green = (int)origPixel.getGreen()+(int)(.5*(origPixel.getGreen()-diagPixel.getGreen()));

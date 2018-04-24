@@ -12,7 +12,6 @@ public class PictureTester
 	public static void testSharpen(int x, int y, int w, int h)
 	{
 	     Picture redMoto = new Picture("beach.jpg");
-	     redMoto.explore();
 	     redMoto.sharpen(x,y,w,h);
 	     redMoto.explore();
 	}
