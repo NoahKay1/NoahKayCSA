@@ -1,3 +1,4 @@
+
 //© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
@@ -34,16 +35,16 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		keys = new boolean[5];
 
 		ship = new Ship(400, 500, 35, 35, 2);
-		
+
 		int hordeWidth = 7;
 		int hordeHeight = 4;
 		int hordeSize = hordeWidth * hordeHeight;
-		
+
 		horde = new AlienHorde(hordeSize);
 		shots = new Bullets();
-		
-		for(int x = 8; x < StarFighter.WIDTH - 100; x += (StarFighter.WIDTH) / 8)
-			for(int y = 22; y < StarFighter.HEIGHT / 1.5; y += (StarFighter.HEIGHT / 1.5) / 4)
+
+		for (int x = 8; x < StarFighter.WIDTH - 100; x += (StarFighter.WIDTH) / 8)
+			for (int y = 22; y < StarFighter.HEIGHT / 1.5; y += (StarFighter.HEIGHT / 1.5) / 4)
 				horde.add(new Alien(x + 20, y, 25, 25, 1));
 
 		this.addKeyListener(this);
@@ -90,11 +91,26 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		}
 
 		// update
+		for (int i = 0; i < shots.getAmmo().size(); i++)
+			for (int j = 0; j < horde.getAliens().size(); j++)
+				try {
+					if (shots.getAmmo().get(i).isColliding(horde.getAliens().get(j))) {
+						shots.getAmmo().remove(i--);
+						horde.getAliens().remove(j--);
+					}
+				} catch (Exception e) {
+				}
+
+		// check collision between ship and alienhorde
+		for (int i = 0; i < horde.getAliens().size(); i++)
+			if (ship.isColliding(horde.getAliens().get(i))) {
+				System.out.println("You lose.");
+				System.exit(0);
+			}
+
 		horde.moveEmAll();
 		shots.moveEmAll();
-		horde.removeDeadOnes(shots.getList());
 		shots.cleanEmUp();
-		horde.checkShipDeath(ship);
 
 		if (horde.getSize() == 0) {
 			System.out.println("You win!");
@@ -103,7 +119,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 
 		// render
 		graphToBack.setColor(Color.WHITE);
-		graphToBack.drawString(""+horde.getSize(), 740, 530);
+		graphToBack.drawString("" + horde.getSize(), 740, 530);
 		ship.draw(graphToBack);
 		shots.drawEmAll(graphToBack);
 		horde.drawEmAll(graphToBack);
@@ -125,7 +141,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			keys[3] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_A) { // I used 'a' because space is buggy for no reason
+		if (e.getKeyCode() == KeyEvent.VK_A) { // I used 'a' because space is
+												// buggy for no reason
 			keys[4] = true;
 		}
 	}
@@ -143,7 +160,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			keys[3] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_A) { // I used 'a' because space is buggy (try it)
+		if (e.getKeyCode() == KeyEvent.VK_A) { // I used 'a' because space is
+												// buggy (try it)
 			keys[4] = false;
 		}
 	}

@@ -4,11 +4,11 @@
 //Class - 
 //Lab  -
 
-import java.io.File;
-import java.net.URL;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
+import java.net.URL;
+
 import javax.imageio.ImageIO;
 
 public class Ship extends MovingThing
@@ -38,12 +38,12 @@ public class Ship extends MovingThing
 		speed=s;
 		try
 		{
-			URL url = getClass().getResource("C:\\Users\\kayn2930\\Desktop\\NoahKayCSA\\Unit17\\src\\ship.jpg");
-			image = ImageIO.read(url);
+			String url = "./images/ship.jpg";
+			image = ImageIO.read(new File(url));
 		}
 		catch(Exception e)
 		{
-			//feel free to do something here
+			e.printStackTrace();
 		}
 	}
 

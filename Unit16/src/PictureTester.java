@@ -11,7 +11,7 @@ public class PictureTester
 	
 	public static void testSharpen(int x, int y, int w, int h)
 	{
-	     Picture redMoto = new Picture("beach.jpg");
+	     Picture redMoto = new Picture("redMotorcycle.jpg");
 	     redMoto.explore();
 	     redMoto.sharpen(x,y,w,h);
 	     redMoto.explore();
@@ -168,6 +168,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	testSharpen(50,50,300,300); 
+	testSharpen(50,50,500,400); 
   }
 }

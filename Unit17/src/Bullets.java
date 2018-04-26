@@ -39,6 +39,10 @@ public class Bullets
 			if (ammo.get(i).getY() < 0)
 				ammo.remove(i);
 	}
+	
+	public List<Ammo> getAmmo() {
+		return ammo;
+	}
 
 	public List<Ammo> getList() {
 		return ammo;
