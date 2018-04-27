@@ -1,0 +1,13 @@
+
+public class BulletRight extends Ammo {
+	public BulletRight(int i, int y, int j) {
+		super(i,y,j);
+	}
+
+	@Override
+	public void move() {
+		
+			setX(getX() - getSpeed());
+		
+	}
+}

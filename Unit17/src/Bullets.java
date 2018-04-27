@@ -26,7 +26,7 @@ public class Bullets
 
 	public void moveEmAll() {
 		for (Ammo a : ammo)
-			a.move("UP");
+			a.move();
 	}
 
 	public void drawEmAll(Graphics window) {

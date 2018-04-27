@@ -55,6 +55,10 @@ public class AlienHorde
 	public int getSize() {
 		return size;
 	}
+	
+	public void minusSize(){
+		size--;
+	}
 
 	public String toString() {
 		return "";

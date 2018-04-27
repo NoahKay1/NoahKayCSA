@@ -10,7 +10,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.imageio.ImageIO;
 
-public class Ammo extends MovingThing
+public abstract class Ammo extends MovingThing
 {
 	private int speed;
 
@@ -40,11 +40,7 @@ public class Ammo extends MovingThing
 		window.fillRect(getX(), getY(), 5, 15);
 	}
 
-	public void move(String direction) {
-		if (direction.equals("UP")) {
-			setY(getY() - speed);
-		}
-	}
+	public abstract void move();
 
 	public String toString() {
 		return super.toString() + " " + getSpeed();
