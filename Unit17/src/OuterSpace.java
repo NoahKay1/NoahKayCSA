@@ -32,7 +32,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 	public OuterSpace() {
 		setBackground(Color.black);
 
-		keys = new boolean[8];
+		keys = new boolean[9];
 
 		ship = new Ship(400, 500, 35, 35, 2);
 
@@ -84,26 +84,35 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			ship.move("DOWN");
 		}
 		if (keys[4] == true) {
-			if (tick >= 70) {
+			if (tick >= 20) {
 				shots.add(new BulletLeft(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
 				tick = 0;
 			}
 		}
 		if (keys[5] == true) {
-			if (tick >= 70) {
+			if (tick >= 20) {
 				shots.add(new BulletUp(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
 				tick = 0;
 			}
 		}
 		if (keys[6] == true) {
-			if (tick >= 70) {
+			if (tick >= 20) {
 				shots.add(new BulletDown(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
 				tick = 0;
 			}
 		}
 		if (keys[7] == true) {
-			if (tick >= 70) {
+			if (tick >= 20) {
 				shots.add(new BulletRight(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
+				tick = 0;
+			}
+		}
+		if (keys[8] == true) {
+			if (tick >= 15) {
+				shots.add(new BulletRight(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
+				shots.add(new BulletUp(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
+				shots.add(new BulletDown(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
+				shots.add(new BulletLeft(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
 				tick = 0;
 			}
 		}
@@ -137,7 +146,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			System.exit(0);
 		}
 
-		
+	 
 		graphToBack.setColor(Color.WHITE);
 		graphToBack.drawString("" + horde.getSize(), 740, 530);
 		ship.draw(graphToBack);
@@ -173,6 +182,9 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_D) { 
 			keys[7] = true;
 		}
+		if (e.getKeyCode() == KeyEvent.VK_SPACE) { 
+			keys[8] = true;
+		}
 	}
 
 	public void keyReleased(KeyEvent e) {
@@ -199,6 +211,9 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		}
 		if (e.getKeyCode() == KeyEvent.VK_D) { 
 			keys[7] = false;
+		}
+		if (e.getKeyCode() == KeyEvent.VK_SPACE) { 
+			keys[8] = false;
 		}
 	}
 

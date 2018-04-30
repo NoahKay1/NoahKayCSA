@@ -1,0 +1,26 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class BulletRight extends Ammo {
+	public BulletRight(int i, int y, int j) {
+		super(i,y,j);
+	}
+
+	@Override
+	public void move() {
+		
+			setX(getX() + getSpeed());
+		
+	}
+	@Override
+	public void draw(Graphics window) {
+		int loc = 0;
+		if (loc == 0){ window.setColor(Color.RED); loc = 1;}
+		if (loc == 1){ window.setColor(Color.ORANGE); loc = 2;}
+		if (loc == 2){ window.setColor(Color.YELLOW); loc = 3;}
+		if (loc == 3){ window.setColor(Color.GREEN); loc = 4;}
+		if (loc == 4){ window.setColor(Color.BLUE); loc = 5;}
+		if (loc == 5){ window.setColor(Color.CYAN); loc = 0;}
+		window.fillRect(getX(), getY(), 15, 5);
+	}
+}
