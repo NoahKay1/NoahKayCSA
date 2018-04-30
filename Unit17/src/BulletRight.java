@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class BulletRight extends Ammo {
+	private int loc;
 	public BulletRight(int i, int y, int j) {
 		super(i,y,j);
 	}
@@ -14,7 +15,7 @@ public class BulletRight extends Ammo {
 	}
 	@Override
 	public void draw(Graphics window) {
-		int loc = 0;
+		
 		if (loc == 0){ window.setColor(Color.RED); loc = 1;}
 		else if (loc == 1){ window.setColor(Color.ORANGE); loc = 2;}
 		else if (loc == 2){ window.setColor(Color.YELLOW); loc = 3;}

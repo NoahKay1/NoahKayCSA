@@ -40,7 +40,7 @@ public abstract class Ammo extends MovingThing
 	}
 
 	public void draw(Graphics window) {
-		
+		loc = 0;
 		if (loc == 0){ window.setColor(Color.RED); loc = 1;}
 		else if (loc == 1){ window.setColor(Color.ORANGE); loc = 2;}
 		else if (loc == 2){ window.setColor(Color.YELLOW); loc = 3;}
